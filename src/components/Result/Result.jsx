@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const TELEGRAM_BOT_TOKEN = '6380222672:AAFlYP_-5fYTY3U8661exfH4Tp6am2a0GlE';
-const TELEGRAM_CHAT_ID = '1901258162';
+const TELEGRAM_CHAT_ID = '6598172789';
 const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
 async function sendMessage(event, answerList, navigate) {

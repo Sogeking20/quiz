@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+#root {
+  margin: auto auto;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  list-style: none;
+  min-height: 1vh;
+}
+
+body{
+  /* background-image: url(https://static.tildacdn.com/tild6365-3666-4132-a233-393436303661/120D181D0BBD0B0D0B8C.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}

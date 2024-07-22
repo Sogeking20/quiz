@@ -1,6 +1,7 @@
 import './Result.css'
 import { questions } from '../../question';
 import { useNavigate } from 'react-router-dom';
+import img from '../../assets/photo_5256103311407439148_y.png';
 
 
 const TELEGRAM_BOT_TOKEN = '6380222672:AAFlYP_-5fYTY3U8661exfH4Tp6am2a0GlE';
@@ -56,7 +57,7 @@ export default function Result({Back, answerList}){
                     <div className="result-content-textbox">
                         Почти готово. Мы отправим Вам подборку с ценами в WhatsApp в самое ближайшее время.
                     </div>
-                    <img className='result-img' src="https://static.tildacdn.com/tild3632-6430-4337-b736-393037383537/Group2070.png" alt="" />
+                    <img className='result-img' src={img} alt="" />
                     <form onSubmit={() => sendMessage(event, answerList, navigate)} className="result-form">
                         <div className="form-input">
                             <input className='form-input-name' name='name' type="text" required placeholder="Ваше имя"/>

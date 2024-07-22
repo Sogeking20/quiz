@@ -1,4 +1,3 @@
-// import {flex} from '.assets/flex.png'
 
 export const questions = [
     {

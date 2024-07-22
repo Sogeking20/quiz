@@ -32,7 +32,6 @@ async function sendMessage(event, answerList, navigate) {
         });
         if (response.ok) {
             navigate('/ending');
-            console.log('Спасибо за заявку!');
         } else {
             throw new Error(`Error: ${response.status}`);
         }
@@ -65,7 +64,7 @@ export default function Result({Back, answerList}){
                         </div>
                         <div className="form-label">
                             <label>
-                                <input required type="checkbox" />
+                                <input required type="checkbox" defaultChecked/>
                                 Я принимаю условия политики конфиденциальности
                             </label>
                         </div>

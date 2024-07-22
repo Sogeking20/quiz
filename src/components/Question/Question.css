@@ -247,12 +247,6 @@
   top: -40px;
 }
 
-.recommendations-image.static>img{
-  width: 100%;
-  position: relative;
-  top: -10px;
-}
-
 @media(max-width: 1200px){
   .variant-image-price:after{
     top: -180px;

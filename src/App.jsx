@@ -27,9 +27,7 @@ function App() {
   
   const Next = useCallback((number, index) => {
     let answer = document.querySelector(`.container-inner input[name="${number}"]:checked`);
-
     if (answer) {
-      console.log(answer);
       if (number < questions.length + 1) {
         // Clear any existing timeouts before setting a new one
         if (timeoutId) {
@@ -50,7 +48,6 @@ function App() {
       answerList[number] = index;
     }
 
-    console.log(step);
   }, [questions.length, timeoutId, step]);
 
   const Back = useCallback(() => {

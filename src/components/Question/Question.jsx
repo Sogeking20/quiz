@@ -1,8 +1,8 @@
-import Opening from '../Opening/Opening.jsx'
 import { questions } from '../../question.js'
 import Result from '../Result/Result.jsx'
 import React from 'react';
 import './Question.css'
+import img from "../../assets/27387475-1024x1024.png"
 
 function Question({question, Answer, step, Back, Next, number, answerList}){
 
@@ -61,8 +61,8 @@ function Question({question, Answer, step, Back, Next, number, answerList}){
                                 <div>После прохождения опроса вы получите подборку кроваток нужной конструкции</div>
                                 </div>
                                 <div className='recommendations-inner-content-two'>
-                                <div className='recommendations-image static'>
-                                    <img src="https://static.tildacdn.com/tild6131-3131-4631-b534-613630323837/1234_1.png" alt="" />
+                                <div className='recommendations-image'>
+                                    <img src={img} alt="" />
                                 </div>
                                 <div>Расчет стоимости в мессенджерах</div>
                                 </div>

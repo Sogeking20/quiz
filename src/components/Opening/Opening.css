@@ -59,16 +59,31 @@
     width: 500px;
     min-height: 100px;
     border-radius: 15px;
-    background-color: #6990DA;
-    transition: all 0.2s;
+    transition: all 1s ease;
     color: white;
     font-size: 20px;
     margin-bottom: 100px;
+    background: linear-gradient(-45deg, #6990DA 25%, white 27%, white 28%, #6990DA 30%, #6990DA 75%);
+    background-size: 400% 400%;
+    animation: gradient 10s linear infinite;
+    overflow: hidden;
 }
 
 .opening-content-inner-button:hover{
-    background-color: #316cd8;
+    background: linear-gradient(-45deg, #316cd8 25%, white 27%, white 28%, #316cd8 30%, #316cd8 75%);
+    background-size: 400% 400%;
+    animation: gradient 10s linear infinite;
 }
+
+@keyframes gradient {
+    0% {
+        background-position: 200% 50%;
+    }
+    100% {
+        background-position: -200% 50%;
+    }
+}
+
 
 .opening-content-inner-qualities{
     display: flex;

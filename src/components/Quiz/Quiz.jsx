@@ -1,13 +1,8 @@
 import { questions } from '../../question.js'
-import { useForm } from 'react-hook-form'
 import Question from '../Question/Question.jsx'
 import Opening from '../Opening/Opening.jsx'
 import img1 from '../../assets/Erkins-18.jpg'
 import img2 from '../../assets/DSC01622-редакт.jpg'
-import img3 from '../../assets/DSC01633-редакт.jpg'
-import img4 from '../../assets/Erkins-15.jpg'
-import img5 from '../../assets/Erkins-18.jpg'
-import img6 from '../../assets/Erkins-18.jpg'
 import './Quiz.css'
 
 export default function Quiz({question, Answer, setStep, step, Back, Next, answerList}){

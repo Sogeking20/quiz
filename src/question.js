@@ -22,7 +22,7 @@ export const questions = [
       recommendations: {text: 'Односторонний анатомический матрас', image: 'https://erkins-rostov.ru/wp-content/uploads/2024/07/17611943.png'}
     },
     {
-      title: 'Какой тип дивана вас интересует?',
+      title: 'Какой тип матраса вас интересует?',
       variantsImage: [
         {
           text: 'Flex',

@@ -1,11 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
 import { questions } from '../../question.js'
 import Question from '../Question/Question.jsx'
 import Opening from '../Opening/Opening.jsx'
-import img1 from '../../assets/Erkins-18.jpg'
-import img2 from '../../assets/DSC01622-редакт.jpg'
 import './Quiz.css'
-// import LazyLoad from 'react-lazyload';
 
 export default function Quiz({question, Answer, setStep, step, Back, Next, answerList}){
 
@@ -21,29 +17,15 @@ export default function Quiz({question, Answer, setStep, step, Back, Next, answe
     percentage = Math.round((step / questions.length * 100))
   }
 
-  const [image, setImage] = useState(null);
-  const backgroundRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setImage(step === 0 || step === 2 || step === 4 ? img1 : img2);
-        observer.disconnect();
-      }
-    });
-
-    if (backgroundRef.current) {
-      observer.observe(backgroundRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [step, img1, img2]);
-    
   return(
     <>  
-      <div className="background-image" ref={backgroundRef} style={{ backgroundImage: `url(${image})` }}>
+      <div className="background-image" style={step === 1 || step === 3 || step === 5 ? {opacity: `1`} : {opacity: `0`}}>
         <div className='background-inner'></div>
       </div>
+      <div className="background-image-two" style={step === 0 || step === 2 || step === 4 || step === 6 ? {opacity: `1`} : {opacity: `0`}}>
+        <div className='background-inner'></div>
+      </div>
+
       <div className="game">
         <div className="container">
           <div className='progress-bar'>

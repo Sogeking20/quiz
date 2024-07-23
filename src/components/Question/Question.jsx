@@ -2,7 +2,7 @@ import { questions } from '../../question.js'
 import Result from '../Result/Result.jsx'
 import React from 'react';
 import './Question.css'
-import img from "../../assets/27387475-1024x1024.png"
+import img from "../../../public/27387475-1024x1024.png"
 
 function Question({question, Answer, step, Back, Next, number, answerList}){
 

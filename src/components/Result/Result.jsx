@@ -1,8 +1,10 @@
 import './Result.css'
 import { questions } from '../../question';
 import { useNavigate } from 'react-router-dom';
-import img from '../../assets/photo_5256103311407439148_y.png';
-
+import img from '../../../public/photo_5256103311407439148_y.png';
+import InputMask from 'react-input-mask';
+import { useState } from 'react';
+// import MaterialInput from '@material-ui/core/Input';
 
 const TELEGRAM_BOT_TOKEN = '6380222672:AAFlYP_-5fYTY3U8661exfH4Tp6am2a0GlE';
 const TELEGRAM_CHAT_ID = '6598172789';
@@ -42,6 +44,64 @@ async function sendMessage(event, answerList, navigate) {
     }
 }
 
+const PhoneInput = () => {
+    const [phone, setPhone] = useState('');
+    const [error, setError] = useState('');
+  
+    const handleChange = (event) => {
+        setPhone(event.target.value);
+      };
+    
+      const handleBlur = () => {
+        const digitsOnly = phone.replace(/\D/g, '');
+        if (digitsOnly.length < 7) {
+          setError('Номер телефона должен содержать минимум 7 цифр.');
+        } else {
+          setError('');
+        }
+      };
+  
+    return (
+      <div>
+        <label htmlFor="phone"></label>
+        <InputMask
+          mask="+7 (999) 999-99-99"
+          maskChar="_"
+          value={phone}
+          onChange={handleChange}
+          name="phone"
+          type="tel"
+          placeholder='Ваш номер'
+          required
+          className='form-input-tel'
+        >
+          {(inputProps) => <input {...inputProps} type="text" id="phone" />}
+        </InputMask>
+        {error && <div style={{ color: 'red' }}>{error}</div>}
+      </div>
+    );
+  };
+
+//     return (
+//       <div>
+//         <label htmlFor="phone"></label>
+//         <InputMask
+//           mask="+7 (999) 999-99-99"
+//           maskChar="_"
+//           alwaysShowMask={false}
+//           id="phone"
+//           name="phone"
+//           type="tel"
+//           placeholder='Ваш номер'
+//           required
+//           className='form-input-tel'
+//         >
+//           {(inputProps) => <input {...inputProps} type="text" id="phone" />}
+//         </InputMask>
+//       </div>
+//     );
+//   };
+
 export default function Result({Back, answerList}){
     const navigate = useNavigate();
     
@@ -60,7 +120,8 @@ export default function Result({Back, answerList}){
                     <form onSubmit={() => sendMessage(event, answerList, navigate)} className="result-form">
                         <div className="form-input">
                             <input className='form-input-name' name='name' type="text" required placeholder="Ваше имя"/>
-                            <input className='form-input-tel' name='phone' type="tel" required placeholder="Ваш номер" />
+                            <PhoneInput />
+                            {/* <input className='form-input-tel' name='phone' type="tel" required placeholder="Ваш номер" /> */}
                         </div>
                         <div className="form-label">
                             <label>

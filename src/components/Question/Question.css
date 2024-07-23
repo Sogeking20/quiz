@@ -379,4 +379,8 @@
     top: 430px;
   }
 
+  .recommendations-image>img{
+    top: -25px;
+  }
+
 }
